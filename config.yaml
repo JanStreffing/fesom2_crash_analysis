@@ -1,0 +1,62 @@
+# FESOM2 Crash Analysis Configuration
+# ====================================
+
+# Mesh configuration
+mesh:
+  path: /work/ab0246/a270092/input/fesom2/dars2
+
+# PyFESOM2 library
+pyfesom2:
+  path: /work/ab0246/a270092/software/pyfesom2
+
+# Data paths
+data:
+  # Directory containing the blowup file
+  work_dir: /work/bb1469/a270092/runtime/awiesm3-develop/test-spinup/run_13580101-13591231_crash/work
+  # Blowup file name (relative to work_dir)
+  blowup_file: fesom.1358.oce.blowup.nc
+  # Output directory for generated plots
+  output_dir: /work/bb1469/a270092/runtime/awiesm3-develop/test-spinup/run_13580101-13591231_crash
+
+# Crash location (from error log)
+crash:
+  lon: 29.7770298093963
+  lat: 41.2424041260004
+
+# Region to plot (bounding box around crash)
+region:
+  lon_min: 25
+  lon_max: 35
+  lat_min: 38
+  lat_max: 44
+
+# Plot settings
+plotting:
+  # DPI for output images
+  dpi: 150
+  # Edge threshold for triangulation masking (degrees)
+  edge_threshold: 0.5
+  # Font sizes
+  fonts:
+    title: 22
+    subtitle: 18
+    axis_label: 16
+    tick_label: 14
+    colorbar_label: 16
+    colorbar_tick: 14
+  # Marker size for crash location
+  crash_marker_size: 20
+  # Line width for profiles
+  profile_linewidth: 2.5
+  # Marker size for profiles
+  profile_markersize: 6
+
+# Categories to plot (set to false to skip)
+categories:
+  tracers: true
+  ssh: true
+  ice: true
+  fluxes: true
+  vertical_velocity: true
+  mixing: true
+  layer_thickness: true
